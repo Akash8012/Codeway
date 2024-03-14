@@ -1,8 +1,10 @@
 
 import java.util.Scanner;
     public class ATMmachine{ 
+      //ATM PIN has been Taken 
       float Balance;
       int pin = 8980;
+         //CheckPin will be the First method to be accessed from main method 
       public void checkpin(){
                 Scanner sc = new Scanner(System.in);
                    System.out.print("Enter the PIN : ");
@@ -12,7 +14,8 @@ import java.util.Scanner;
                         else{
                              System.out.println("Invalid PIN ");
                         } 
-                 }
+                   }
+    //Menu method represents the different feature of ATM   
       public void menu(){
          System.out.println("1. Check Balance ");
          System.out.println("2. Withdrwal");
@@ -36,24 +39,26 @@ import java.util.Scanner;
                  }
                  menu();
          
-   }
+           }
+       //Method to Withdraw Money from the User's Account
      public void withdrawMoney(){
-      Scanner sc = new Scanner(System.in);
-        int withdrawAmt = sc.nextInt();
-         System.out.println("Enter the Amoountto withdraw ");
-             if(withdrawAmt>Balance){
+          Scanner sc = new Scanner(System.in);
+          int withdrawAmt = sc.nextInt();
+            System.out.println("Enter the Amoountto withdraw ");
+                 
+                    if(withdrawAmt>Balance){
                   System.out.println("Insufficient Balance ");
-             }
+                }
              else if(withdrawAmt<=Balance){
                Balance -=withdrawAmt; 
                   System.out.println("Collect Cash ");
-             }
+                 }
              else{
                  System.out.println("Enter a valid Amount ");
-             }
+                }
              menu();
-
-          }
+            }
+       //Method to Deposit the money into User's Account
           public void Deposit(){
               Scanner sc = new Scanner(System.in); 
                 System.out.println("Enter the Amount");
@@ -61,12 +66,14 @@ import java.util.Scanner;
                     Balance += depoAmt;
                     System.out.println("Money deposited Succesfully");
                     menu();
-              }
+                 }
+           //Method to check Balance of users A/c.
+  
               public void checkBalance(){
                  System.out.println("Your Balance :" +Balance);
               }
-
-   public static void main(String args[]){
+            //Main Method of ATM interface
+        public static void main(String args[]){
           ATMmachine obj = new ATMmachine();
               obj.checkpin();
             }
