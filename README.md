@@ -1,1 +1,1 @@
-It is an Interface of Automated Teller Machine which being built using Java.
+This repository consists of three different projects which are developed using Java Language. 
